@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Join | Code Share</title>
+	<link rel="icon" href="d1.png" type="image/gif" sizes="16x16">
+
+	 
+
+	<meta charset="utf-8" name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+	<link rel="stylesheet" type="text/css" href="./styles.css">
+	 <link rel="stylesheet" type="text/css" href="assets/css/bootstrap.min.css" >
+    
+    <link rel="stylesheet" type="text/css" href="assets/fonts/line-icons.css">
+    
+    <link rel="stylesheet" type="text/css" href="assets/css/slicknav.css">
+   
+    <link rel="stylesheet" type="text/css" href="assets/css/nivo-lightbox.css" >
+   
+    <link rel="stylesheet" type="text/css" href="assets/css/animate.css">
+     
+    <link rel="stylesheet" type="text/css" href="assets/css/main.css">
+    
+    <link rel="stylesheet" type="text/css" href="assets/css/responsive.css">
+
+ 
+</head>
+
+<body class="centered-form" style="background-color: lightgray;">
+
+ 
+		<form name="myDetails" action="JavaScript:openNotepad()"  onsubmit = "return validate()" class="box">
+		 
+
+				<div class="form-field">
+				<input  type="text" name="name" autofocus="yes" autocomplete="off" placeholder="YOUR NAME" style="padding-right: 10px;">
+			</div>
+			<div class="form-field">
+				 
+				<input type="text"   autofocus="yes" autocomplete="off" placeholder="YOUR EMAIL ID">
+			</div>
+			<div class="form-field">
+		 
+				<input type="text" name="room" autofocus="yes" autocomplete="off" placeholder="ROOM ID">
+			</div>
+			<div class="form-field">
+				<button class="button" >JOIN</button>
+			</div>
+		</form>
+ 
+    <div id="copyright">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-12">
+            <div class="site-info">
+              <h2 style="color: white; padding-top: 10px;">CODE SHARE</h2>
+               
+            </div>      
+          </div>
+        </div>
+      </div>
+    </div>
+ 
+
+	<script type="text/javascript">
+	function openNotepad()
+	{
+		var child = window.open(`/notepad.html?name=${document.forms["myDetails"]["name"].value}&room=${document.forms["myDetails"]["room"].value}`);
+		window.close();
+	}
+	
+	function validate(){
+		let user_name = document.forms["myDetails"]["name"].value;
+		let room_id = document.forms["myDetails"]["room"].value;
+
+		user_name = user_name.trim();
+		room_id = room_id.trim();
+
+		if(user_name.length == 0 && room_id.length == 0)
+		{
+			document.forms["myDetails"]["name"].value = ""
+			document.forms["myDetails"]["room"].value = ""
+			alert("Name and Room ID must be filled")
+			return false;
+		}
+
+		if(user_name.length == 0)
+		{
+			document.forms["myDetails"]["name"].value = ""
+			alert("Name must be filled");
+			return false;
+		}
+
+		if(room_id.length == 0)
+		{
+			document.forms["myDetails"]["room"].value = ""
+			alert("Room ID must be filled");
+			return false;
+		}
+
+		return true;
+	}
+
+	</script>
+</body>
+</html>
