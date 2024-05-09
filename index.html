@@ -1,154 +1,215 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="utf-8" />
-    <title>Code Share</title>
-    <link rel="icon" href="assets/img/d1.png" type="image/gif" sizes="16x16" />
-    
-   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
-    <link href="http://fonts.googleapis.com/css?family=Cookie" rel="stylesheet" />
-   
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" type="text/css" href="styles.css" />
-    <link rel="stylesheet" type="text/css" href="assets/css/bootstrap.min.css" >
-  
-    <link rel="stylesheet" type="text/css" href="assets/fonts/line-icons.css">
-    
-    <link rel="stylesheet" type="text/css" href="assets/css/slicknav.css">
-    
-    <link rel="stylesheet" type="text/css" href="assets/css/nivo-lightbox.css" >
-    
-    <link rel="stylesheet" type="text/css" href="assets/css/animate.css">
-    
-    <link rel="stylesheet" type="text/css" href="assets/css/main.css">
-     
-    <link rel="stylesheet" type="text/css" href="assets/css/responsive.css">
+<head>
+  <meta charset="utf-8" />
+  <title>Code Share</title>
+  <link rel="icon" href="assets/img/d1.png" type="image/gif" sizes="16x16" />
 
-     
-  </head>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+  <link href="http://fonts.googleapis.com/css?family=Cookie" rel="stylesheet" />
 
-  <body class="body_class">
-   
-      <nav class="navbar navbar-expand-lg fixed-top scrolling-navbar">
-        <div class="container">
-          
-          <div class="navbar-header">
-          
-            <a href="index.html" class="navbar-brand" style="color: white
-            ; font-size: x-large;">Code Share</a>
-          </div>
-           
-
-       
-
-      </nav>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <style>
+    /* Navbar */
+    .navbar {
+       /* Dark background color */
+      padding-top: 45px; /* Padding on the top */
+      padding-bottom: 45px; /* Padding on the bottom */
+      margin-top: 3px;
       
-      <div id="main-slide" class="carousel slide" data-ride="carousel">
-         
-        <div class="carousel-inner">
-          <div class="carousel-item active">
-            <img class="d-block w-100" src="assets/img/bg.jpg" alt="First slide">
-            <div class="carousel-caption d-md-block">
-              <p class="fadeInUp wow" data-wow-delay=".6s">Prepare For Your Coding Interviews</p>
-              <h1 class="wow fadeInDown heading" data-wow-delay=".4s">CODE SHARE</h1>
-               <p class="fadeInUp wow" data-wow-delay=".6s"> Code Share is a platform for giving mock interviews and preparing for their placement and internship</p>
-              <a id="create_btn"href="#" class="fadeInLeft wow btn btn-common btn-lg" data-wow-delay=".6s">CREATE ROOM</a>
-              <a href="join.html" class="fadeInRight wow btn btn-border btn-lg" data-wow-delay=".6s" target=__blank>JOIN ROOM</a>
-   
-<div class="col-auto">
-    <label for="inputPassword2" class="visually-hidden" >Password</label>
-    <p class="fadeInUp wow" data-wow-delay=".6s" style="padding-top: 16px;"> Copy this Room ID, and ask candidate to join with this Room ID only</p>
-     <div style="padding-top: 15px;">
-      <input style="justify-content: center; " type="input" name="input"   id="room_input" readonly placeholder="Rooom ID">
-     </div>
-  </div>
+      height: 60px;
+    }
 
+    .navbar-brand {
+       
+      color: #fff; /* White color */
+      font-weight: bold; /* Bold font weight */
+      font-style: italic;
+      font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+      font-size: large;
+    }
 
-<div>
-  <form class="row g-3">
-  <div class="col-auto">
-        
-  </div>
-   
+    /* Carousel */
+    .carousel-item img {
+      height: 450px; /* Adjust the height of carousel images */
+      border: #000c18;
+      border-radius: 195%;
+    }
 
-  <button id="copy_btn" class="fadeInRight wow btn btn-border btn-lg" >copy</button>
-  
-</form>
-</div>
-            </div>
+    .carousel-caption {
+       /* Semi-transparent background for caption */
+      padding: 110px;
+       
+      height:   10px;
+      
+    }
+    .carousel-caption2 {
+       /* Semi-transparent background for caption */
+      padding: 110px;
+      border-radius: 10px;
+      height:   210px;
+      
+    }
 
-          </div>
-          
-        
+    .carousel-caption p, .carousel-caption h1 {
+      color: #fff; /* White text color */
+    }
+
+    .carousel-caption p {
+      font-size: 18px; /* Font size for paragraph */
+    }
+
+    .carousel-caption .btn {
+      margin-top: 20px; /* Margin for buttons */
+    }
+
+    /* Room ID text box */
+    #room_input_div {
+      background-color: #f0f0f0; /* Background color for the Room ID div */
+      padding: 20px; /* Padding for the Room ID div */
+      border-radius: 10px; /* Rounded corners */
+      text-align: center; /* Center align content */
+      margin-top: 20px; /* Margin from top */
+    }
+
+    #room_input {
+      width: 50%;
+      padding: 10px;
+      border: 1px solid #ced4da; /* Grey border */
+      border-radius: 5px;
+      font-size: 16px; /* Font size */
+      margin-top: 10px; /* Margin top */
+      background-color: #fff; /* Background color */
+    }
+
+    #copy_btn {
+      margin-top: 10px; /* Margin top for copy button */
+      background-color: #000c18; /* Blue color */
+      width: auto; /* Adjust width */
+      padding: 10px 20px; /* Adjust padding */
+      border-radius: 50px; /* Circular shape */
+    }
+
+    /* Footer */
+    .footer-area {
+      background-color: transparent; /* Transparent footer */
+      padding: 30px 0; /* Padding top and bottom */
+    }
+
+    .footer-area h3 {
+      color: #fff; /* White text color */
+      font-size: 24px; /* Larger font size */
+    }
+
+    .footer-area p {
+      color: #fff; /* White text color */
+      font-size: 14px; /* Smaller font size */
+    }
+
+    /* Copyright */
+    #copyright {
+      background-color: transparent; /* Transparent background */
+      color: #fff; /* White text color */
+      padding: 20px 0; /* Padding top and bottom */
+    }
+
+    #copyright .site-info {
+      text-align: center;
+    }
+
+    /* Custom classes */
+    .body_class {
+      padding-top: 80px; /* Adjust body padding to accommodate fixed navbar */
+      background-image: url("assets/img/background.jpg"); /* Background image */
+      background-size: cover; /* Cover the entire viewport */
+      background-position: center; /* Center the background image */
+      background-attachment: fixed; /* Fixed background image */
+      background-color: rgba(74,167,255); /* Overlay color with transparency */
+    }
+
+    .main_body_class {
+      padding: 50px 0; /* Padding for main content */
+    }
+
+    .heading {
+      color: #fff; /* White heading color */
+      padding: 3%;
+      padding-top: 3%;
+      padding-bottom: 7%;
+      
+      font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+      font-size:40px;
+    }
+    .heading2 {
+      color: #fff; /* White heading color */
+      padding: 3%;
+      font-display: bold;
+      font-family: 'Arial', sans-serif; /* Good font style */
+      font-size: 36px; /* Increase font size */
+    }
+
+    .intro {
+      font-size: 24px; /* Font size for introduction */
+    }
+
+    #heading_div, #description_div {
+      margin-bottom: 30px; /* Margin bottom for sections */
+    }
+  </style>
+  <link rel="stylesheet" type="text/css" href="assets/css/bootstrap.min.css" >
+  <link rel="stylesheet" type="text/css" href="assets/fonts/line-icons.css">
+  <link rel="stylesheet" type="text/css" href="assets/css/slicknav.css">
+  <link rel="stylesheet" type="text/css" href="assets/css/nivo-lightbox.css">
+  <link rel="stylesheet" type="text/css" href="assets/css/animate.css">
+  <link rel="stylesheet" type="text/css" href="assets/css/main.css">
+  <link rel="stylesheet" type="text/css" href="assets/css/responsive.css">
+</head>
+
+<body class="body_class">
+  <nav class="navbar navbar-expand-lg fixed-top scrolling-navbar">
+    <div class="container">
+      <div class="navbar-header">
+        <a href="index.html" class="navbar-brand">Code Share</a> <!-- Modified here -->
+      </div>
+    </div>
+  </nav>
+
+  <div id="main-slide" class="carousel slide" data-ride="carousel">
+    <div class="carousel-inner">
+      <div class="carousel-item active">
+        <img class="d-block w-100"    >
+        <div class="carousel-caption d-md-block">
+          <p class="heading2">Prepare For Your Coding Interviews</p> <!-- Modified here -->
+          <p class="heading">Code Share</p> <!-- Modified here -->
+          <p>Code Share is a platform for giving mock interviews and preparing for their placement and internship</p>
+          <a id="create_btn" href="#" class="btn btn-common btn-lg">CREATE ROOM</a>
+          <a href="join.html" class="btn btn-primary btn-lg" style="background-color: #00008B; font-size: 15px;" target="__blank">JOIN ROOM</a> <!-- Modified here -->
         </div>
-         
       </div>
-       
+    </div>
+  </div>
 
-    </header>
-
-   
-
-
-       
-    <div class="main_body_class">
-      <div id="heading_div">
-        <p id="intro"></p>
+  <div class="container">
+    <div class="row">
+      <div class="col"></div>
+      <div class="col-md-auto">
+        <div id="room_input_div">
+          <label for="room_input">Room ID</label>
+          <div class="input-group mb-3">
+            <input type="text" class="form-control" id="room_input" readonly placeholder="Room ID">
+            <button class="btn btn-primary rounded-pill" type="button" id="copy_btn">Copy</button>
+          </div>
+        </div>
       </div>
+      <div class="col"></div>
+    </div>
+  </div>
 
-     
-      <div id="description_div">
-        <p id="description"></p>
-
-     
-
+  <div class="main_body_class">
+    <div id="heading_div">
+      <p id="intro"></p>
+    </div>
+    <div id="description_div">
+      <p id="description"></p>
       <div id="room_id">
-       
-        
-         
       </div>
-    </div>
-
-   
-<footer class="footer-area section-padding">
-      <div class="container">
-        <div class="row">
-          <div class="col-md-6 col-lg-3 col-sm-6 col-xs-12 wow fadeInUp" data-wow-delay="0.2s">
-            <h3 style="position:relative;  left:400px;">CODE SHARE</h3>
-              
-          </div>
-           <p style="text-align: center;">
-             Code Share is a mock interview platform that is use for mainly college students as it provides a coding environment for organizing mock coding interviews. 
-            </p>
-           
-            
-            <div class="widget">
-              <h5 class="widget-title"></h5>
-              <ul class="footer-social">
-                <p style="padding-top: 10px;">Follow me on: </p>
-                <li style="padding-top: 10px;"><a class="twitter" href="https://twitter.com/Kaushal15355043"><i class="lni-twitter-filled"></i></a></li>
-                <li style="padding-top: 10px;"><a class="linkedin" href="https://www.linkedin.com/in/kaushal-agrawal11/"><i class="lni-linkedin-filled"></i></a></li>
-             
-              </ul>
-            </div>
-          </div>
-        </div>
-      </div>
-    </footer>
-     
-    <div id="copyright">
-      <div class="container">
-        <div class="row">
-          <div class="col-md-12">
-            <div class="site-info">
-              <p>© Developed by Kaushal Agrawal</p>
-               <p> For more information, mail me at kaushalagr.02@gmail.com</p>
-            </div>      
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <script type="module" src="./mainPage.js" crossorigin="anonymous"></script>
-  </body>
-</html>
