@@ -2113,6 +2113,8 @@ a.back-to-top:hover, a.back-to-top:focus {
 #main-slide .carousel-item img {
   position: relative;
   width: 100%;
+  height: 500px;
+padding-top: 10px;
 }
 
 #main-slide .carousel-inner .carousel-item::after {
@@ -2120,8 +2122,9 @@ a.back-to-top:hover, a.back-to-top:focus {
   content: "";
   left: 0;
   position: absolute;
-  right: 0;
-  top: 0;
+  right: 130;
+  top: 10;
+  bottom: 10;
 }
 
 #main-slide .carousel-item .carousel-caption {
@@ -2131,7 +2134,7 @@ a.back-to-top:hover, a.back-to-top:focus {
 }
 
 #main-slide .carousel-item .carousel-caption .heading {
-  font-size: 48px;
+  font-size: 92px;
   font-weight: 700;
   color: #fff;
   text-transform: uppercase;
@@ -2140,7 +2143,7 @@ a.back-to-top:hover, a.back-to-top:focus {
 }
 
 #main-slide .carousel-item .carousel-caption p {
-  font-size: 20px;
+  font-size: 25px;
 }
 
 #main-slide .carousel-item.active .carousel-caption {
@@ -2152,7 +2155,7 @@ a.back-to-top:hover, a.back-to-top:focus {
 #main-slide .carousel-caption {
   color: #fff;
   position: absolute;
-  top: 35%;
+  top: 22%;
 }
 
 #main-slide .carousel-caption .btn {
